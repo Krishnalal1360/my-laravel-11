@@ -28,15 +28,12 @@ use App\Http\Controllers\EloquentORM\DeleteController1;
 
 use App\Http\Controllers\EloquentORM\EmployeeCreate;
 
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\EloquentORM\ConditionalClauseController;
 
 use App\Http\Controllers\EloquentORM\SoftDeleteController;
 
 use App\Http\Controllers\EloquentORM\RestoreForceDeleteController;
 
->>>>>>> c643cb8 (Query Builder and Eloquent ORM)
 Route::get('/', function () {
     return view('welcome');
 });
@@ -119,9 +116,6 @@ Route::get('/eloquent-orm-employee-create',
 
 Route::get('/eloquent-orm-employee-insert',
 [EmployeeCreate::class, 'insert']
-<<<<<<< HEAD
-)->name('eloquent-orm-employee-insert');
-=======
 )->name('eloquent-orm-employee-insert');
 
 Route::get('/eloquent-orm-conditional-clause/{id}',
@@ -151,4 +145,3 @@ Route::get('/eloquent-orm-restore/{id}',
 Route::get('/eloquent-orm-force-delete/{id}',
 [RestoreForceDeleteController::class, 'forceDeleteData']
 );
->>>>>>> c643cb8 (Query Builder and Eloquent ORM)
