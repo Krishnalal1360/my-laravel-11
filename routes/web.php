@@ -34,6 +34,10 @@ use App\Http\Controllers\EloquentORM\SoftDeleteController;
 
 use App\Http\Controllers\EloquentORM\RestoreForceDeleteController;
 
+use App\Http\Controllers\FormValidation\FormValidationController;
+
+use App\Http\Controllers\FileStorage\FileStorageController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -145,3 +149,29 @@ Route::get('/eloquent-orm-restore/{id}',
 Route::get('/eloquent-orm-force-delete/{id}',
 [RestoreForceDeleteController::class, 'forceDeleteData']
 );
+
+//Form Validation routes
+
+Route::prefix('/form-validation')->name('form-validation.')->group(function(){
+    //
+    Route::get('/form-show', 
+    [FormValidationController::class, 'form']
+    );
+    //
+    Route::post('/form-submit',
+    [FormValidationController::class, 'submit']
+    )->name('form-submit');
+});
+
+//File Storage routes
+
+Route::prefix('/file-storage')->name('file-storage.')->group(function(){
+    //
+    Route::get('/form-show', 
+    [FileStorageController::class, 'form']
+    )->name('file-storage.form-show');
+
+    Route::post('/form-submit', 
+    [FileStorageController::class, 'submit']
+    )->name('file-storage.form-show');
+});

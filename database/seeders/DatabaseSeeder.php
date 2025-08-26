@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\QueryBuilderSeeder;
 use Database\Seeders\ProductSeeder;
 use Database\Seeders\EmployeeSeeder;
+use Database\Seeders\FormValidationSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(QueryBuilderSeeder::class);
         $this->call(ProductSeeder::class);
         $this->call(EmployeeSeeder::class);
+        $this->call(FormValidationSeeder::class);
     }
 }
